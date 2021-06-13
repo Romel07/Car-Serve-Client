@@ -1,0 +1,16 @@
+.header-background{
+    /* background-image: url('../../../images/header-Img.jpg'); */
+    /* height: 800px; */
+    /* position: :relative; */
+    /* background-color: rgb(120, 146, 137); */
+    /* opacity: .5; */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header-background img {
+    height: auto;
+    width: 100%;
+    /* position: relative; */
+    transform: translateY(-50px);
+    z-index: -10;
+}

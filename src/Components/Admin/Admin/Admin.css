@@ -1,0 +1,17 @@
+.AdminStyle{
+    background-image: url('../../../images/login.jpg');
+    background-size: cover;
+    opacity: .7;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.AdminStyle form{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1em;
+    background: 2px solid red;
+    background-color: rgb(178, 241, 241);
+    width:38em;
+    height: 19em;
+}
