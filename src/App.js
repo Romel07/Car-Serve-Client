@@ -30,6 +30,7 @@ function App() {
         <Switch>
           
           <Route path="/login"><Login /></Route>
+          <Route path="/login"><Login /></Route>
           
 
           <PrivateRoute path="/booking/:serviceName"><UserBooking /></PrivateRoute>
