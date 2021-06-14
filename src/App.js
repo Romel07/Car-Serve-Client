@@ -16,27 +16,26 @@ import UserReview from './Components/PurchaseService/UserReview/UserReview';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
-export const userContext =createContext();
+export const UserContext =createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({})
-  console.log(loggedInUser.email);
+  console.log(loggedInUser);
 
   return (
-    <userContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
       <div>
         
         <Switch>
           
           <Route path="/login"><Login /></Route>
-          <Route path="/login"><Login /></Route>
-          
 
           <PrivateRoute path="/booking/:serviceName"><UserBooking /></PrivateRoute>
           <PrivateRoute path="/booking"><UserBooking /></PrivateRoute>
           <PrivateRoute path="/allBookings"><AllBookingList /></PrivateRoute>
           <PrivateRoute path="/userReview"><UserReview /></PrivateRoute>
+
 
           <PrivateRoute path="/admin"><Admin /></PrivateRoute>
           <PrivateRoute path="/allOrders"><AllOrders /></PrivateRoute>
@@ -47,7 +46,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-    </userContext.Provider>
+    </UserContext.Provider>
   );
 }
 

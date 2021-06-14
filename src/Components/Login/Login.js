@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { userContext } from '../../App';
+import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 
 
@@ -17,10 +17,7 @@ const Login = () => {
     let location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
   
-    const [loggedInUser, setLoggedInUser] = useContext(userContext)
-
-
-    const [signInUser, setSignInUser] = useState({})
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -37,10 +34,12 @@ const Login = () => {
                     var credential = result.credential;
                     var token = credential.accessToken;
                     var user = result.user;
-                    setSignInUser(user)
-                    setLoggedInUser(user)
+                    const {displayName, email} = result.user
+                    const signedInUser = {name: displayName, email: email}
+                    setLoggedInUser(signedInUser)
+                    console.log(signedInUser);  
                     history.replace(from);
-                    // console.log(loggedInUser.email);  
+
 
                 }).catch((error) => {  
                     var errorCode = error.code;
