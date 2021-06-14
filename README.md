@@ -20,7 +20,7 @@ Romel----Romel07cuet@gmail.com
 
 #### Live Site Link:
 
-https://car-serve.firebaseapp.com/
+https://car-serve.netlify.app/
 
 #### Acknowledgement:
 
